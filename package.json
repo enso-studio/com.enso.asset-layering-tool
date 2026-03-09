@@ -1,0 +1,14 @@
+{
+  "name": "com.enso.asset-layering-tool",
+  "displayName": "Asset Layering Tool",
+  "author": "David Nicklas",
+  "version": "0.1.0",
+  "unity": "6000.0",
+  "description": "This tool is used to layer assets in your 2D Level Design workflow.",
+  "type": "library",
+  "keywords": [
+    "scene view",
+    "2d",
+    "editor tool"
+  ],
+}
