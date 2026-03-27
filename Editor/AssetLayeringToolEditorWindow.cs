@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEditor;
 using Sirenix.OdinInspector.Editor;
+using UnityEditor.ShortcutManagement;
 
 namespace AssetLayeringTool.Editor
 {
@@ -12,6 +13,7 @@ namespace AssetLayeringTool.Editor
 
         // Öffnet das Fenster über die obere Menüleiste in Unity
         [MenuItem("Tools/2D Layer Manager")]
+        [Shortcut("Asset Layering/2D Layer Manager", KeyCode.L, ShortcutModifiers.Alt)]
         private static void OpenWindow()
         {
             GetWindow<LayerManagerWindow>("Layer Manager").Show();

@@ -71,9 +71,18 @@ namespace AssetLayeringTool.Editor
         {
             Event evt = Event.current;
 
-            // Etwas mehr Höhe für den modernen Look
             Rect itemRect = GUILayoutUtility.GetRect(GUIContent.none, GUIStyle.none, GUILayout.Height(44));
-            GUI.Box(itemRect, "", "button");
+
+            bool isSelected = Selection.gameObjects.Contains(entry.GameObject);
+            if (isSelected)
+            {
+                var selectedColor = new Color(0.243f, 0.373f, 0.588f, 1f);
+                EditorGUI.DrawRect(itemRect, selectedColor);
+            }
+            else
+            {
+                GUI.Box(itemRect, "", "button");
+            }
 
             // Icon (linksbündig)
             Rect iconRect = new Rect(itemRect.x + 5, itemRect.y + 5, 34, 34);
@@ -281,6 +290,18 @@ namespace AssetLayeringTool.Editor
         [OnInspectorGUI]
         private void DrawGrid()
         {
+            // horizontal scroll movement
+            Event evt = Event.current;
+
+            if (evt.type == EventType.ScrollWheel)
+            {
+                if (evt.modifiers == EventModifiers.Shift)
+                {
+                    horizontalScrollPos.x += evt.delta.x * 20f;
+                    evt.Use();
+                }
+            }
+
             GUILayout.Space(10);
             horizontalScrollPos = GUILayout.BeginScrollView(horizontalScrollPos);
             GUILayout.BeginHorizontal();
