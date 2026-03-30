@@ -12,11 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd9d976075db4c1eaab3137eeb1c7607, type: 3}
   m_Name: SO_NewLayerConfig
   m_EditorClassIdentifier: 
+  northParentObjectName: NorthDeco
+  northColor: {r: 0.2, g: 0.6, b: 1, a: 1}
+  southParentObjectName: SouthDeco
+  southColor: {r: 1, g: 0.3, b: 0.3, a: 1}
+  westParentObjectName: WestDeco
+  westColor: {r: 0.78699994, g: 0.63071626, b: 0.15628365, a: 1}
+  eastParentObjectName: EastDeco
+  eastColor: {r: 0.5, g: 0.2, b: 1, a: 1}
   layerConfigs:
   - layerName: Background
-    depthValue: 10
+    depthValue: 2
   - layerName: Midground
-    depthValue: 5
+    depthValue: 6
   - layerName: Default
     depthValue: 0
   - layerName: Characters

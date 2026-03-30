@@ -91,5 +91,15 @@ namespace AssetLayeringTool.Editor
             EditorUtility.SetDirty(this);
             AssetDatabase.SaveAssets();
         }
+
+        public void ChangeZValue(string layer, float newZ)
+        {
+            var layerCfg = layerConfigs.Find(x => x.layerName == layer);
+            if (layerCfg != null)
+            {
+                layerCfg.depthValue = newZ;
+                EditorUtility.SetDirty(this);
+            }
+        }
     }
 }
